@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../actions';
 import FrontPageTitle from '../components/parts/FrontPageTitle';
+import FrontPagePosts from '../components/FrontPagePosts';
 import SimplePostFilter from '../components/SimplePostFilter';
 
 class FrontPage extends Component {
@@ -28,9 +29,9 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   loadPosts(){
-    fetchPosts();
+    dispatch(fetchPosts());
   }
 });
 
 
-export default connect(mapStateToProps)(FrontPage);
+export default connect(mapStateToProps,mapDispatchToProps)(FrontPage);
