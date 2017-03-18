@@ -14,7 +14,6 @@ class FrontPage extends Component {
   render() {
     return (
       <div>
-      FRONT PAGE CONTAINER
         <FrontPageTitle />
         <SimplePostFilter />
         <FrontPagePosts posts={this.props.posts} />

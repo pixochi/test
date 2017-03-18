@@ -1,23 +1,30 @@
 import React, { Component, PropTypes } from 'react';
+import { countries } from '../constants/countries';
 
 class SimplePostFilter extends Component {
   render() {
     return (
       <div>
         <select>
-            <option>Slovakia</option>
-            <option>Narnia</option>
+            {countries.map((country,index) => 
+                <option key={index} value={country}>{country}</option>
+            )}
         </select>
         <select>
-            <option>Slovakia</option>
-            <option>Narnia</option>
+            {countries.map((country,index) => 
+                <option key={index} value={country}>{country}</option>
+            )}
         </select>
         <select>
-            <option>Work</option>
-            <option>Accommodation</option>
-            <option>Trade</option>
-            <option>Events</option>
+            <option value="work">Work</option>
+            <option value="accommodation">Accommodation</option>
+            <option value="trade">Trade</option>
+            <option value="events">Events</option>
+            <option value="transport">Transport</option>
+            <option value="groups">Groups</option>
+            <option value="qa">Q & A</option>
         </select>
+        <button>Find it!</button>
       </div>
     )
   }
