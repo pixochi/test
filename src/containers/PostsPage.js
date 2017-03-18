@@ -10,7 +10,7 @@ import Post from '../components/Post.js';
 class PostsPage extends Component {
   
   componentDidMount() {
-      this.props.loadPosts();
+      this.props.loadPosts(this.props.location.query);
   }
   
   render() {
@@ -19,7 +19,7 @@ class PostsPage extends Component {
         <SearchFilter />
         <SortFilter />
         <div className="posts-page">
-           {this.props.posts.map((post,index) => <Post {...post} /> )}
+           {this.props.posts.map((post,index) => <Post key={post._id} {...post} /> )}
         </div>
     </section>
     )
@@ -27,17 +27,15 @@ class PostsPage extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  test: "Test text in mapStateToProps",
   posts: state.posts
 });
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        loadPosts() {
-          dispatch(fetchPosts());
+        loadPosts(query) {
+          dispatch(fetchPosts(query));
         } 
     }
 }
-
 
 export default connect(mapStateToProps,mapDispatchToProps)(PostsPage);

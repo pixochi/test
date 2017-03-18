@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
 import { posts }  from './posts';
+import { filter } from './filter';
 import { errors } from './errors';
+import { loading } from './loading';
 
 const testReducer = (state = "defaultStateValue",action) => {
     if(action.type === "TEST"){
@@ -12,7 +14,9 @@ const testReducer = (state = "defaultStateValue",action) => {
 
 const rootReducer = combineReducers({
     posts,
+    filter,
     errors,
+    isFetching: loading,
     test: testReducer
 });
 

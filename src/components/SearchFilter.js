@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class SearchFilter extends Component {
     render() {
-        return(<h1>Hello</h1>);
+        return(<h1>SearchFilter Component</h1>);
     }
 }
 

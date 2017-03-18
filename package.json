@@ -30,6 +30,7 @@
     "webpack": "^2.2.1"
   },
   "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "redux-logger": "^2.8.2"
   }
 }
